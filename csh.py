@@ -14,16 +14,16 @@ def sommes(des):
                 _sommes.append(des[de] + des[autre])
     return set(_sommes)
 
-def stats(dejaTire = 0):
+def stats(dejaTire):
     stats = {2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10:0, 11:0, 12:0}
     for jeter in range(NB_TIRAGE):
         des = tirage()
         _sommes = sommes(des)
-        if (dejaTire not in _sommes):
+        if (not _sommes.intersection(dejaTire)):
             for resultat in _sommes:
                 stats[resultat] += 1
     return stats
 
-data = stats(8)
+data = stats({7,9})
 plt.bar(data.keys(), data.values())
 plt.show()
