@@ -25,14 +25,15 @@ def stats(dejaTire):
     return stats
 
 def runAndPlot(dejaTire, overallMax):
-    print('\nProbabilité de tirage ayant pris les lignes', dejaTire)
+    print('### Probabilité de tirage ayant pris les lignes', dejaTire, '\n')
     data = stats(dejaTire)
     ratio = overallMax / max(data.values())
     for ligne in range(2,13):
         gauge = "□" * int(data[ligne] * ratio * WIDTH / NB_TIRAGE)
         espacement = " " * (1 - int(ligne / 10))
-        print (ligne, espacement, gauge)
+        print (ligne, espacement, gauge, "\n")
 
+print('# Aide Can\'t stop\n')
 canonical = stats({})
 overallMax = canonical[7]
 for ligne1 in range(2,13):
