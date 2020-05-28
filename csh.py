@@ -26,9 +26,9 @@ def stats(dejaTire):
 
 def tirageCount(tirages = {}):
     tirageCount = {}     
-    for l1 in range(2,12):
-        for l2 in range(2,12):
-            for l3 in range(2,12):
+    for l1 in range(2,13):
+        for l2 in range(2,13):
+            for l3 in range(2,13):
                 if (l1 != l2) and (l1 != l3) and (l2 != l3):
                     tirage = [l1, l2, l3]
                     tirage.sort()
@@ -70,4 +70,4 @@ for ligne1 in range(2,13):
 print('## Classement des combinaisons\n')
 print("occurences sur ",NB_TIRAGE," tirs des combinaisons non perdantes\n")
 for i in classement().items():
-    print(i[1], " fois ", i[0])
+    print(i[1], " fois ", i[0],"\n")
